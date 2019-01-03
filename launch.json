@@ -1,0 +1,30 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "(gdb) Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/../x64/Debug/${fileBasenameNoExtension}.exe", //编译出的exe保存路径，与tasks.json中配置对应
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "targetArchitecture": "x64",
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "miDebuggerPath": "D:/Program Files (x86)/CodeBlocks/MinGW/bin/gdb32.exe", //gdb路径
+            "preLaunchTask": "Compile",	// 调试会话开始前执行的任务，一般为编译程序
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}
